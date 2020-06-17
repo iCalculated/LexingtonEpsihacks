@@ -1,24 +1,49 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Blog</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<html> 
+  <head> 
+    <title>LawHub</title> 
+    <%= csrf_meta_tags %> 
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
+  </head> 
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <body> 
+    <!--Navigation Bar--> 
+    <nav class="navbar navbar-light bg-light d-flex"> 
+      <div class="container"> 
+        <div class="logo"> 
+          <a class="navbar-brand" href="#"> 
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-gavel fa-inverse fa-flip-horizontal fa-stack-1x"></i>
+            </span>
+                LawHub 
+          </a> 
+        </div> 
+        <div class="m-auto"> 
+          <form class="form-inline search-form"> 
+            <input class="form-control mr-sm-2" type="search" placeholder="@search" aria-label="Search"> 
+          </form> 
+        </div> 
+        <div class="user-section"> 
+          <a><i class="fa fa-compass"></i></a> 
+          <a><i class="fa fa-heart"></i></a> 
+          <a><i class="fa fa-user"></i></a> 
+        </div> 
+      </div> 
+    </nav> 
 
-  <body>
-    <% if user_signed_in? %>
-      <p>
-        Hello <%= current_user %>
-      </p>
-    <% else %>
-      <p>
-        Hello Stranger
-      </p>
-    <% end %>
-    <%= yield %>
-  </body>
+    <!--Main content--> 
+    <main class="container" style="min-height: 500px;"> 
+      <%= yield %> 
+    </main> 
+
+    <!--Footer--> 
+    <footer class="container footer"> 
+      <nav class="navbar d-flex"> 
+        <ul> 
+          <li>PLACEHOLDER FOOTER </li>
+        </ul> 
+      </nav> 
+    </footer> 
+  </body> 
 </html>
