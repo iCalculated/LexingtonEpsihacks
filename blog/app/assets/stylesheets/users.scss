@@ -2,15 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.profile .avatar{ 
-  .wrapper{ 
-    width: 140px; 
-    height: 140px; 
-    margin: 40px auto; 
-  } 
-  .wrapper img{ 
-    width: 100%; 
-    border-radius: 50%; 
+.profile .avatar{
+  .wrapper img{
+    width: 140px;
+    height: 140px;
+    margin: 40px 80px;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
   } 
 } 
 
