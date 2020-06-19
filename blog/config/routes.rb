@@ -1,3 +1,4 @@
+require 'commontator'
 Rails.application.routes.draw do
   root 'welcome#index'
 

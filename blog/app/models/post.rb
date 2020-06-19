@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   belongs_to :user
   after_commit :create_tags, on: :create
   acts_as_votable
+  acts_as_commontable depdendent: :destroy
   def create_tags
     extract_tags.each do |name|
       tags.create(name: name)

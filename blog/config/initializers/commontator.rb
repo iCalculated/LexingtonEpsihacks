@@ -140,7 +140,7 @@ Commontator.configure do |config|
   #   :l (only if it's the latest comment)
   #   :n (never)
   # Default: :l
-  config.comment_editing = :l
+  config.comment_editing = :a
 
   # comment_deletion
   # Type: Symbol
@@ -151,7 +151,7 @@ Commontator.configure do |config|
   #   :n (never)
   # Note: For moderators, see the next option
   # Default: :l
-  config.comment_deletion = :l
+  config.comment_deletion = :a
 
   # moderator_permissions
   # Type: Symbol
@@ -172,7 +172,7 @@ Commontator.configure do |config|
   #   :l  (likes)
   #   :ld (likes/dislikes)
   # Default: :n
-  config.comment_voting = :n
+  config.comment_voting = :ld
 
   # vote_count_proc
   # Type: Proc
@@ -203,7 +203,7 @@ Commontator.configure do |config|
   # If :l is selected, the "reply to thread" form will appear before the comments
   # Otherwise, it will appear after the comments
   # Default: :e
-  config.comment_order = :e
+  config.comment_order = :vl
 
   # new_comment_style
   # Type: Symbol
@@ -224,7 +224,7 @@ Commontator.configure do |config|
   #   :b (both <blockquote> the original comment and indent replies)
   # It might be a good idea to add some CSS to hide <blockquote>s when converting from :q to :i
   # Default: :n
-  config.comment_reply_style = :n
+  config.comment_reply_style = :i
 
   # comments_per_page
   # Type: Array
