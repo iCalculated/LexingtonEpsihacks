@@ -8,7 +8,7 @@
   <div class="user-posts">
     <% @posts.each do |post| %>
       <div class="wrapper">
-        <%=post.title %>
+        <%= link_to post.title, post_path(post) %>
       </div>
     <% end %>
   </div>
