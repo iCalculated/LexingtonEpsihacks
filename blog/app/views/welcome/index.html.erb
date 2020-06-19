@@ -15,7 +15,8 @@
         <div class="description"> 
           <%= post.description %> 
         </div>
-        <div class"voting">
+        <div class="btn-group">
+          Lex: 
           <%= post.get_upvotes.size - post.get_downvotes.size %>
           <%= button_to "upvote", like_post_path(post), method: :put %>
           <%= button_to "downvote", dislike_post_path(post), method: :put %>
