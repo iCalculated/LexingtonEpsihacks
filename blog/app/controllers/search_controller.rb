@@ -4,7 +4,7 @@ class SearchController < ApplicationController
       query = params[:query].gsub('#','')
       @posts = Post.joins(:tags).where(tags: {name: query})
     else
-      @posts = Post.where("description LIKE ?","%#{params[:query]}%")
+      @posts = Post.where("description LIKE ?","%#{params[:query]}%").or(Post.where("title LIKE ?","%#{params[:query]}%"))
     end
   end
 end
