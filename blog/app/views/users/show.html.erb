@@ -18,8 +18,18 @@
         <li><span>195</span> laws written</li> 
         <li><span>345</span> laws read</li> 
       </ul> 
-      <h2 class="name">Sasha Hydrie</h2> 
-      <a class="website">sashahydrie.me</a> 
+      <h2 class="name"><%= @user.name %></h2> 
+      <a class="website"><%=@user.website%></a> 
+      <%=@user.bio%>
     </div> 
+    <div class="user-posts">
+      <% @posts.each do |post|%> 
+        <div class="wrapper"> 
+          <%=link_to post_path(post) do %> 
+            <%= post.title %> 
+          <% end %> 
+        </div> 
+      <% end %>
+    </div>
   </div> 
 </div>

@@ -96,6 +96,10 @@
       width: 100%; 
     } 
   } 
+  .title{
+    font-size: 18px;
+    font-weight: bold;
+  }
 
   .user{ 
     display: flex; 
@@ -124,7 +128,7 @@
     } 
   } 
 
-  .description{ 
+  .content{ 
     padding: 15px 0; 
   } 
   .delete{ 
