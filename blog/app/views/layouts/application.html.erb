@@ -2,7 +2,7 @@
   <head> 
     <title>Lex</title> 
     <%= csrf_meta_tags %> 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
   </head> 
 
@@ -10,23 +10,26 @@
     <!--Navigation Bar--> 
     <nav class="navbar navbar-light bg-light d-flex"> 
       <div class="container">
-        <div class="logo"> 
+        <div class="logo">
           <a class="navbar-brand" href="/">
             <span class="fa-stack fa-lg">
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-inverse fa-gavel fa-stack-1x"></i>
             </span>
-                Lex 
-          </a> 
-        </div> 
-        <div class="m-auto"> 
+                Lex
+          </a>
+        </div>
+        <div class="m-auto">
           <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
-              <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
+              <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: 'search' %>
           <% end %>
-        </div> 
-        <div class="user-section"> 
-          <a><i class="fa fa-compass"></i></a> 
-          <a><i class="fa fa-heart"></i></a> 
+        </div>
+        <div class="user-section">
+          <% if user_signed_in? %>
+            <a><i class="fa fa-plus"></i></a>
+          <% end %>
+          <a><i class="fa fa-compass"></i></a>
+          <a><i class="fa fa-heart"></i></a>
           <% if user_signed_in? %>
             <a href="<%= user_path(current_user)%>" data-method="delete">
               <i class="fa fa-user"></i>
@@ -36,7 +39,7 @@
               <i class="fa fa-sign-in"></i>
             </a>
           <% end %>
-        </div> 
+        </div>
       </div> 
     </nav> 
 
