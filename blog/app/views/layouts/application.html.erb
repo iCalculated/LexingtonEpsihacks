@@ -1,6 +1,6 @@
 <html> 
   <head> 
-    <title>LawHub</title> 
+    <title>Lex</title> 
     <%= csrf_meta_tags %> 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> 
@@ -16,13 +16,13 @@
               <i class="fa fa-circle fa-stack-2x"></i>
               <i class="fa fa-inverse fa-gavel fa-stack-1x"></i>
             </span>
-                LawHub 
+                Lex 
           </a> 
         </div> 
         <div class="m-auto"> 
-          <form class="form-inline search-form"> 
-            <input class="form-control mr-sm-2" type="search" placeholder="@search" aria-label="Search"> 
-          </form> 
+          <%= form_with url: search_path, method: :get, local: true, class: 'form-inline search-form' do |form| %>
+              <%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: '#search' %>
+          <% end %>
         </div> 
         <div class="user-section"> 
           <a><i class="fa fa-compass"></i></a> 
