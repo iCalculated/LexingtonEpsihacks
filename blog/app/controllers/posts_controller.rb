@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.find(params[:id])
     @post.destroy
 
-    redirect_to user_path(current_user)
+    redirect_to user_path(current_user), :notice => "Your post has been deleted successfully."
   end
 private
   def post_params
