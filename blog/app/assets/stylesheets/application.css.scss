@@ -23,6 +23,7 @@
   max-width: 90%;
 }
 .navbar{
+  height: 80px;
   border-bottom: 1px solid rgba(0,0,0,.0975);
 }
 .user-section{
@@ -34,6 +35,12 @@
     color: #000000d4;
   }
 }
+.user-section {
+  float: right;
+  vertical-align: center;
+  margin: auto;
+}
+
 .search-form{
   input{
     font-size: 13px;
