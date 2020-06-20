@@ -6,4 +6,7 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_one_attached :avatar
   acts_as_voter
+
+  acts_as_commontator
+
 end

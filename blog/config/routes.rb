@@ -1,5 +1,7 @@
+require 'commontator'
 Rails.application.routes.draw do
   root 'welcome#index'
+  mount Commontator::Engine => '/commontator'
 
   devise_for :users
   resources :users, only: [:show, :edit, :update]
