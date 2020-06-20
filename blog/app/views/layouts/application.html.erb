@@ -19,10 +19,12 @@
         Lex
       </a>
     </div>
-    
+
     <div class="user-section">
       <% if user_signed_in? %>
-        <a><i class="fa fa-plus"></i></a>
+        <%= link_to new_post_path, class: "new-post-button", method: :get do %>
+          <i class="fa fa-plus"></i>
+        <% end %>
       <% end %>
       <a><i class="fa fa-compass"></i></a>
       <a><i class="fa fa-heart"></i></a>
