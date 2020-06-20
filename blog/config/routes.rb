@@ -1,6 +1,7 @@
 require 'commontator'
 Rails.application.routes.draw do
   root 'welcome#index'
+  mount Commontator::Engine => '/commontator'
 
   devise_for :users
   resources :users, only: [:show, :edit, :update]
@@ -11,5 +12,4 @@ Rails.application.routes.draw do
     end
   end
   get 'search' => 'search#index'
-  mount Commontator::Engine => '/commontator'
 end
