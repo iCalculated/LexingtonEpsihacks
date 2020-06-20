@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   end
   def show
     @post = Post.find(params[:id])
+    commontator_thread_show(@post)
   end
   def destroy
     @post = current_user.posts.find(params[:id])
