@@ -2,31 +2,15 @@
   <div class="title">
     <%= @post.title %>
   </div>
-  <div class="btn-group">
-    Lex: 
-    <%= @post.get_upvotes.size - @post.get_downvotes.size %>
-    <%= button_to "upvote", like_post_path(@post), method: :put %>
-    <%= button_to "downvote", dislike_post_path(@post), method: :put %>
-  </div>
-  <div class="user">
-    <div class="avatar">
-      <% if @post.user.avatar.attached? %>
-        <%= link_to user_path(@post.user) do %> 
-          <%= image_tag @post.user.avatar %> 
-        <% end %> 
-      <% end %>
-    </div>
-    <%= link_to @post.user.username, user_path(@post.user), class: 'username' %>
-  </div>
   <div class="content">
-    <%= render partial: "description", locals: {post: @post} %>
+    <%= @post.description %>
   </div>
-  <div class="delete"> 
-    <% if current_user.posts.exists?(@post.id) %> 
-      <%= button_to 'Remove', post_path(@post), 
-        method: :delete, 
-        confirm: 'Are you sure?' %> 
-    <% end %> 
+  <div class="delete">
+    <% if current_user.posts.exists?(@post.id) %>
+      <%= button_to 'Remove', post_path(@post),
+                    method: :delete,
+                    confirm: 'Are you sure?' %>
+    <% end %>
   </div>
-
+  <%= commontator_thread(@post) %>
 </div>
