@@ -10,11 +10,10 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-//= require turbolinks 
+
 //= require popper 
-//= require jquery3 
-//= require rails-ujs 
-//= require jquery3_ujs
+//= require jquery
+//= require rails-ujs
+//= require jquery-ujs
 //= require bootstrap
-//import $ from 'jquery';
-//global.$ = jQuery;
+//= require turbolinks
