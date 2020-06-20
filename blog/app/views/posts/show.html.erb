@@ -2,6 +2,15 @@
   <div class="title">
     <%= @post.title %>
   </div>
+  <div class="btn-group">
+    Lex: 
+    <%= @post.get_upvotes.size - @post.get_downvotes.size %>
+    <%= button_to "upvote", like_post_path(@post), method: :put %>
+    <%= button_to "downvote", dislike_post_path(@post), method: :put %>
+  </div>
+  <div class="user">
+    <%= link_to @post.user.username, user_path(@post.user), class: 'username' %>
+  </div>
   <div class="content">
     <%= @post.description %>
   </div>
