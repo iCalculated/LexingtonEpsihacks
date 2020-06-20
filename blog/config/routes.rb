@@ -1,11 +1,10 @@
-require 'commontator'
 Rails.application.routes.draw do
-  root 'welcome#index'
   mount Commontator::Engine => '/commontator'
+  root 'posts#index'
 
   devise_for :users
   resources :users, only: [:show, :edit, :update]
-  resources :posts, only: [:new, :create, :show, :destroy] do
+  resources :posts, only: [:new, :create, :show, :destroy, :edit] do
     member do 
       put "like", to: "posts#upvote"
       put "dislike", to: "posts#downvote"
