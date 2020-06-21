@@ -7,7 +7,9 @@
       <%= button_to like_post_path(post), method: :put, class: "btn btn-default btn-sm" do %>
         <span class="glyphicon glyphicon-chevron-up"></span>
       <% end %>
-      <span> <%= post.get_upvotes.size - post.get_downvotes.size %></span>
+      <div class = "score">
+        <b><span style="font-size: 20px"> <%= post.get_upvotes.size - post.get_downvotes.size %></span></b>
+      </div>
       <%= button_to dislike_post_path(post), method: :put, class: "btn btn-default btn-sm" do %>
         <span class="glyphicon glyphicon-chevron-down"></span>
       <% end %>
@@ -16,9 +18,8 @@
       <div class="post-title">
       <%= link_to post.title, post %><br>
       </div>
-      <small class="author">Submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.email %></small>
+      <small class="author">Submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %></small>
     </h2>
-
   </div>
   <br>
 <% end %>

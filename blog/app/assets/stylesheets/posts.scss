@@ -168,9 +168,15 @@
   }
 }
 
-.post-show{ 
+.score {
+  padding-bottom: 10px;
+  text-align: center
+}
+
+.post-show{
+  padding: 0 20px 20px 20px;
   margin: 30px 5px 0; 
-  border: 1px solid #dbdbdb; 
+  border: 1px solid #dbdbdb;
 
   .col-md-8{ 
     padding: 0; 
@@ -199,9 +205,9 @@
         border-radius: 50%; 
       } 
     } 
-    .username{ 
-      padding-top: 15px; 
-      color: #262626; 
+    .username{
+      margin-left: 0.25em;
+      color: #262626;
       font-size: 14px; 
       font-weight: 600; 
       &:hover{ 

@@ -19,6 +19,11 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.score {
+  padding-bottom: 10px;
+  text-align: center
+}
+
 .container{
   max-width: 90%;
 }
@@ -74,4 +79,15 @@
 }
 .post-title {
   padding-bottom: 10px;
+}
+
+.logo {
+  color: #444444;
+  font-family: Comic Sans MS
+}
+.logo :visited {
+  color: #444444
+}
+.logo :hover{
+  color: #222222
 }

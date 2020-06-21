@@ -1,15 +1,22 @@
 <div class="post-show">
   <div class="title">
-    <%= @post.title %>
+    <h3 style="margin-bottom: 0px">
+      <%= @post.title %>
+    </h3>
   </div>
   <div class="btn-group">
-    Lex: 
-    <%= @post.get_upvotes.size - @post.get_downvotes.size %>
-    <%= button_to "upvote", like_post_path(@post), method: :put %>
-    <%= button_to "downvote", dislike_post_path(@post), method: :put %>
+    <%= button_to like_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    <% end %>
+    <div class = "score">
+      <b><span style="font-size: 20px"> <%= @post.get_upvotes.size - @post.get_downvotes.size %></span></b>
+    </div>
+    <%= button_to dislike_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
+      <span class="glyphicon glyphicon-chevron-down"></span>
+    <% end %>
   </div>
   <div class="user">
-    <%= link_to @post.user.username, user_path(@post.user), class: 'username' %>
+    Submitted by <%= link_to @post.user.username, user_path(@post.user), class: 'username' %>
   </div>
   <div class="content">
     <%= render partial: "description", locals: {post: @post} %>

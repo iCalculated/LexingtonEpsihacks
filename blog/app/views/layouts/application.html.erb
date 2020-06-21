@@ -24,7 +24,6 @@
 				<%= form.text_field :query, value: params[:query], class: 'form-control mr-sm-2', placeholder: 'search' %>
 			<% end %>
 		</div>
-
     <div class="user-section">
       <% if user_signed_in? %>
         <%= link_to new_post_path, class: "new-post-button", method: :get do %>
