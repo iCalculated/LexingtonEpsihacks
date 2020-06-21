@@ -25,14 +25,14 @@
 
 .m-auto {
   display: inline-block;
-}
+	padding-top: 20px;
+}               
 
 .navbar{
   height: 80px;
   border-bottom: 1px solid rgba(0,0,0,.0975);
 	.container {
   	text-align: center;   
-		padding-top: 10px;
 	}
 }
 a {
