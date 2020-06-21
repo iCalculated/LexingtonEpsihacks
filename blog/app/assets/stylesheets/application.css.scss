@@ -26,18 +26,23 @@
   height: 80px;
   border-bottom: 1px solid rgba(0,0,0,.0975);
 }
+a {
+  color: #000000,
+}
+a:hover {
+  color: gray,
+}
 .user-section{
+  float: right;
+  padding: 2.5% 0 2.5% 0;
   a{
     padding-left: 15px;
+    color: #000000d4;
   }
   i.fa{
     font-size: 22px;
     color: #000000d4;
   }
-}
-.user-section {
-  float: right;
-  padding: 2.5% 0 2.5% 0;
 }
 
 .search-form{
