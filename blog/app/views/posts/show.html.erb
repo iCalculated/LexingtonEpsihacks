@@ -16,13 +16,11 @@
             <span class="fa fa-chevron-up"></span>
           <% end %>
         <% end %>
-      <div class = "score">
-        <b><span style="font-size: 20px"> <%= @post.cached_weighted_score %></span></b>
-      </div>
+			</div>
       <br>
     <% end %>
     <div class = "score">
-      <span> <%= @post.weighted_score %></span>
+      <span> <%= @post.cached_weighted_score %></span>
     </div>
     <% if user_signed_in? %>
       <br>
