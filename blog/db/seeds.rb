@@ -5,6 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# peak security
+user = User.create! :username => 'square', :email => 'a@gmail.com', :password => 'password', :password_confirmation => 'password'
+user = User.create! :username => 'rhombus', :email => 'b@gmail.com', :password => 'password', :password_confirmation => 'password'
+user = User.create! :username => 'triangle', :email => 'c@gmail.com', :password => 'password', :password_confirmation => 'password'
+user = User.create! :username => 'octagon', :email => 'd@gmail.com', :password => 'password', :password_confirmation => 'password'
+user = User.create! :username => 'trapepzoid', :email => 'e@gmail.com', :password => 'password', :password_confirmation => 'password'
+user = User.create! :username => 'heptagon', :email => 'f@gmail.com', :password => 'password', :password_confirmation => 'password'
+user = User.create! :username => 'circle', :email => 'h@gmail.com', :password => 'password', :password_confirmation => 'password'
+user = User.create! :username => 'ellipse', :email => 'i@gmail.com', :password => 'password', :password_confirmation => 'password'
+user = User.create! :username => 'star', :email => 'j@gmail.com', :password => 'password', :password_confirmation => 'password'
+user = User.create! :username => 'mobius', :email => 'k@gmail.com', :password => 'password', :password_confirmation => 'password'
 posts = Post.create([{title: 'Test', description: 'Testing', user_id: '0'},
                      {title: 'Nonprofit in Need of Assistance', description: 'Our nonprofit needs legal help, and we need it now. To help us raise the money we need to continue our work, we\'re asking for your support.\nWe are a 501(c)(3) non-profit organization, which means we are not a for-profit organization.\nWe rely on the generosity of our supporters to keep our doors open and our programs running.\nYour donations will help us fight to protect the rights of all people and our planet.\nThank you!', user_id: '1', created_at: DateTime.now - 0.2},
                      {title: 'The Buddha Needs Your Help', description: 'Our nonprofit needs legal help in order to continue our work. We also need to raise money for our operations. All funds raised through this Kickstarter will go towards paying our legal fees.\nYou can find out more about us at www.thebuddha.org or on Facebook.\nWe\'ve been featured in the New York Times, The Guardian, The Huffington Post, and the Toronto Star.\nPlease share this video with your friends!', user_id: '2', created_at: DateTime.now - 0.5},
