@@ -27,22 +27,36 @@
 .container{
   max-width: 90%;
 }
+
+.m-auto {
+  display: inline-block;
+	padding-top: 20px;
+}               
+
 .navbar{
   height: 80px;
   border-bottom: 1px solid rgba(0,0,0,.0975);
+	.container {
+  	text-align: center;   
+	}
+}
+a {
+  color: #000000,
+}
+a:hover {
+  color: gray,
 }
 .user-section{
+  float: right;
+  padding: 2.5% 0 2.5% 0;
   a{
     padding-left: 15px;
+    color: #000000d4;
   }
   i.fa{
     font-size: 22px;
     color: #000000d4;
   }
-}
-.user-section {
-  float: right;
-  padding: 2.5% 0 2.5% 0;
 }
 
 .search-form{
