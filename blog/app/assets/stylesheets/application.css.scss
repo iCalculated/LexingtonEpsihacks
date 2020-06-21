@@ -68,20 +68,23 @@
 }
 .post {
   padding-left: 50px;
-  vertical-align: top
+  vertical-align: top;
+  align-items: center;
 }
 .btn-group {
+  padding-top: 10px;
   float: right;
 }
 
 .btn-group link {
-  display: block
+  display: block;
+
 }
 .post-title {
   padding-bottom: 10px;
 }
 
-.logo {
+.logo :link {
   color: #444444;
   font-family: Comic Sans MS
 }

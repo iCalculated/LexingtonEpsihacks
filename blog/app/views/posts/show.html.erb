@@ -22,10 +22,12 @@
     <%= render partial: "description", locals: {post: @post} %>
   </div>
   <div class="delete">
-    <% if current_user.posts.exists?(@post.id) %>
-      <%= button_to 'Remove', post_path(@post),
-                    method: :delete,
-                    confirm: 'Are you sure?' %>
+    <% if user_signed_in? %>
+      <% if current_user.posts.exists?(@post.id) %>
+        <%= button_to 'Remove', post_path(@post),
+                      method: :delete,
+                      confirm: 'Are you sure?' %>
+      <% end %>
     <% end %>
   </div>
   <%= commontator_thread(@post) %>
