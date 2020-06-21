@@ -6,27 +6,35 @@
   </div>
   <div class="btn-group">
     <% if user_signed_in? %>
-      <% if current_user.voted_up_on? @post %>
-        <%= button_to unvote_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
-          <span class="fa fa-chevron-circle-up"></span>
-        <% end %>
+      <div class = "vote">
+        <% if current_user.voted_up_on? @post %>
+          <%= link_to unvote_post_path(@post), method: :put do %>
+            <span class="fa fa-chevron-up upvoted"></span>
+          <% end %>
         <% else %>
-        <%= button_to like_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
-          <span class="fa fa-chevron-up"></span>
+          <%= link_to like_post_path(@post), method: :put do %>
+            <span class="fa fa-chevron-up"></span>
+          <% end %>
         <% end %>
-        <% end %>
-      <div class = "score">
-        <b><span style="font-size: 20px"> <%= @post.weighted_score %></span></b>
       </div>
-      <% if current_user.voted_down_on? @post %>
-      <%= button_to unvote_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
-        <span class="fa fa-chevron-circle-down"></span>
-      <% end %>
+      <br>
+    <% end %>
+    <div class = "score">
+      <span> <%= @post.weighted_score %></span>
+    </div>
+    <% if user_signed_in? %>
+      <br>
+      <div class="vote">
+        <% if current_user.voted_down_on? @post %>
+          <%= link_to unvote_post_path(@post), method: :put do %>
+            <span class="fa fa-chevron-down downvoted"></span>
+          <% end %>
         <% else %>
-        <%= button_to dislike_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
-          <span class="fa fa-chevron-down"></span>
+          <%= link_to dislike_post_path(@post), method: :put do %>
+            <span class="fa fa-chevron-down"></span>
+          <% end %>
         <% end %>
-        <% end %>
+      </div>
     <% end %>
   </div>
   <div class="user">
@@ -38,10 +46,11 @@
   <div class="delete">
     <% if user_signed_in? %>
       <% if current_user.posts.exists?(@post.id) %>
-        <%= button_to 'Remove', post_path(@post),
+        <%= button_to 'Delete post', post_path(@post),
                       method: :delete,
                       confirm: 'Are you sure?' %>
       <% end %>
+      <br>
     <% end %>
   </div>
   <%= commontator_thread(@post) %>
