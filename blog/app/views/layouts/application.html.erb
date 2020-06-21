@@ -30,10 +30,9 @@
         <%= link_to new_post_path, class: "new-post-button", method: :get do %>
           <i class="fa fa-plus"></i>
         <% end %>
-      <% end %>
-      <a><i class="fa fa-compass"></i></a>
-      <a><i class="fa fa-heart"></i></a>
-      <% if user_signed_in? %>
+        <%= link_to user_path(current_user), class: "user-page-button", method: :get do %>
+					<i class="fa fa-heart"></i>
+				<% end %>
         <a href="<%= edit_user_registration_path %>">
           <i class="fa fa-user"></i>
         </a>
