@@ -1,0 +1,32 @@
+<div class='homepage'>
+  <div style = "text-align: center">
+    <h1 style = "margin-top: 15pt" >Welcome to <b>Lex</b>.</h1>
+  </div>
+
+  <% if user_signed_in? %>
+    <div class='form-upload'>
+      <%= render 'upload_form' %>
+    </div>
+  <% end %>
+  <div class="posts"> 
+    <% @posts.each do |post| %> 
+      <section class="post"> 
+        <div class="title">
+          <%= link_to post.title, post %> 
+        </div>
+        <small class="author">
+          Submitted <%= time_ago_in_words(post.created_at) %> by <%= post.user.username %>
+        </small>
+        <div class="description"> 
+          <%= post.description %> 
+        </div>
+        <div class="btn-group">
+          Lex: 
+          <%= post.get_upvotes.size - post.get_downvotes.size %>
+          <%= button_to "upvote", like_post_path(post), method: :put %>
+          <%= button_to "downvote", dislike_post_path(post), method: :put %>
+        </div>
+      </section> 
+    <% end %> 
+  </div>
+</div>
