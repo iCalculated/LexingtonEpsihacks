@@ -10,5 +10,6 @@ Rails.application.routes.draw do
       put "dislike", to: "posts#downvote"
     end
   end
+  get 'posts'  => 'posts#index'
   get 'search' => 'search#index'
 end
