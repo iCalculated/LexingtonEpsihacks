@@ -15,7 +15,7 @@
           <% end %>
         <% end %>
         <div class = "score">
-          <b><span style="font-size: 20px"> <%= post.weighted_score %></span></b>
+          <b><span style="font-size: 20px"> <%= post.cached_weighted_score %></span></b>
         </div>
         <% if current_user.voted_down_on? post %>
           <%= button_to unvote_post_path(post), method: :put, class: "btn btn-default btn-sm" do %>
